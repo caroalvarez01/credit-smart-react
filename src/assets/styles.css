@@ -1,0 +1,408 @@
+/* GENERAL*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+
+html {
+  scroll-padding-top: 100px;
+  background-color: #f9fafc;
+  scroll-behavior: smooth;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #2f3e46;
+  line-height: 1.7;
+  background-color: #f9fafc;
+}
+
+
+h1,h2,h3 {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  color: #216575;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* HEADER */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  color: #7a9f2c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.8rem;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+}
+main {
+  padding-top: 80px;
+}
+
+.logo { display: flex; align-items: center; gap: 0.5rem; }
+.logo img { height: 50px; }
+.logo-title { font-weight: 600; color: #216575; font-size: 1.7rem; }
+
+/* NAV */
+.site-nav ul { display: flex; list-style: none; gap: 1rem; }
+.site-nav a {
+  text-decoration: none;
+  color: #8fbc21;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  padding: 6px 10px;
+  font-weight: 600;
+}
+.site-nav a:hover { color: #216575; transform: translateY(-3px); }
+
+/* HERO */
+.hero {
+  position: relative;
+  height: calc(100vh - 80px);
+  width: 100vw;        /* usa todo el ancho */
+  margin-left: 50%;
+  transform: translateX(-50%);  /* centra el hero respecto a la ventana */
+  overflow: hidden;
+}
+
+
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;        /* igual que el hero */
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.75);
+  background-color: #000;
+}
+
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 760px;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+  margin: 0;
+  text-shadow:
+    0 3px 6px rgba(0,0,0,0.8),
+    0 0 10px rgba(0,0,0,0.7),
+    0 0 2px rgba(0,0,0,1);
+}
+
+.cambio-clim {
+  color: rgba(143,188,33,0.95);
+  font-weight: 700;
+  font-size: 1.9rem;
+  -webkit-text-stroke: 0.8px rgba(0,0,0,0.9);
+  text-shadow:
+    0 2px 4px rgba(0,0,0,0.6),
+    0 0 6px rgba(0,0,0,0.5);
+}
+
+/* CONTENEDOR */
+.contenedor {
+  padding: 3rem 1rem;
+  text-align: center;
+  margin: 4rem auto 1rem auto; 
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* GRID CATÁLOGO DE CRÉDITOS (HOME)*/
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 0;
+}
+
+/* TARJETAS */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 450px;
+  width: 100%;
+  max-width: 350px;
+  transition: all 0.3s ease;
+}
+
+.card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.18); }
+
+.card img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img { transform: scale(1.05); }
+
+.card h3 {
+  color: #729526;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+}
+
+.card p { color: #333; font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+.card .btn { margin-top: auto; }
+
+/* BOTONES */
+.btn {
+  background-color: #8fbc21;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover { background-color: #729526; }
+/* FOOTER */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #729526;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.footer-left {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; 
+}
+
+.footer-right {
+  display: flex;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.footer-right a img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.footer-right a:hover img {
+  filter: brightness(0.6) invert(1);
+  cursor: pointer;
+}
+
+.site-footer p:hover {
+  color: #f7d800;
+  transform: scale(1.08);
+}
+
+
+/* ESTILOS PARA PAG SIMULADOR */
+.simulador-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px rgba(33,101,117,0.10);
+  padding: 2rem 2rem 1rem 2rem;
+  max-width: 700px;
+  margin: 2.5rem auto;   /* único margin, centra el formulario */
+}
+
+
+.simulador-form label {
+  font-weight: 600;
+  color: #216575;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.simulador-form select,
+.simulador-form input[type="number"] {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #dbe2e8;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1.2rem;
+  background: #f9fafc;
+  font-family: 'DM Sans', sans-serif;
+  transition: border 0.2s;
+}
+
+.simulador-form select:focus, 
+.simulador-form input[type="number"]:focus {
+  border: 1.5px solid #216575;
+  outline: none;
+}
+
+.simulador-form .btn {
+  width: 100%;
+  min-width: 200px}
+
+/* ESTILOS PARA LA PÁGINA SOLICITAR CRÉDITO */
+.form-solicitud {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(33, 101, 117, 0.1);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.form-solicitud fieldset {
+  border: 1.5px solid #dbe2e8;
+  border-radius: 10px;
+  padding: 1.5rem 2rem 2rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-solicitud legend {
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #216575;
+  font-size: 1.1rem;
+  padding: 0 10px;
+}
+
+.form-solicitud label {
+  display: block;
+  font-weight: 600;
+  color: #216575;
+  margin-bottom: 0.4rem;
+}
+
+.form-solicitud input,
+.form-solicitud select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #dbe2e8;
+  font-size: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 1rem;
+  background-color: #f9fafc;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-solicitud input:focus,
+.form-solicitud select:focus {
+  outline: none;
+  border-color: #216575;
+}
+
+.form-solicitud .btn {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  background-color: #8fbc21;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.form-solicitud .btn:hover {
+  background-color: #729526;
+}
+
+/* Centrado específico para la página de simulador */
+.simulador-page {
+  max-width: 900px;
+  margin: 4rem auto 2rem auto;
+  padding: 0 1rem;
+}
+
+.apply-resumen,
+.apply-historial {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem 1.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(33, 101, 117, 0.08);
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 1200px;   /* el ancho ideal, puedes ajustar */
+  margin: 0 auto;      /* ESTO centra de verdad */
+  padding: 2rem;
+}
+
+.page-content {
+  max-width: 900px;      /* ancho cómodo */
+  margin: 0 auto;        /* centra horizontal */
+  padding: 2rem 1rem;    /* respiración */
+  display: block;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .form-solicitud {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+}
