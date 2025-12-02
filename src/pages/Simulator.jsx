@@ -22,7 +22,7 @@ export default function Simulator() {
       <div className="page-wrapper">
         <section className="simulador-page">
           <h2>Simula tu Crédito</h2>
-          <p>Filtra por nombre, monto y tasa para encontrar la mejor opción.</p>
+          <p className="seccion-subtitulo">Filtra por nombre, monto y tasa para encontrar la mejor opción.</p>
 
           <form className="simulador-form">
             <div style={{ width: "100%" }}>

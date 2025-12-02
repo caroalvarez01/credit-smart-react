@@ -80,7 +80,7 @@ export default function Apply() {
     <main className="apply-page">
       <section className="apply-container">
         <h2>Solicita tu Crédito</h2>
-        <p>Llena el formulario para simular y enviar tu solicitud de crédito.</p>
+        <p className="seccion-subtitulo">Llena el formulario para simular y enviar tu solicitud de crédito.</p>
 
         {/* FORMULARIO PRINCIPAL */}
         <form onSubmit={handleSubmit} className="form-solicitud">
