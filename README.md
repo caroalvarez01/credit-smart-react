@@ -1,16 +1,37 @@
-# React + Vite
+# CrediSmart – Simulador y solicitud de crédito
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con React que permite a los usuarios conocer diferentes opciones de crédito, simularlos según filtros básicos y enviar una solicitud con sus datos.
 
-Currently, two official plugins are available:
+## Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Página de inicio**
+  - Encabezado con logo y navegación.
+  - Sección hero con mensaje principal.
+  - Catálogo de productos de crédito con tarjetas (imagen, título, descripción y botón).
 
-## React Compiler
+- **Página “Simula tu Crédito”**
+  - Búsqueda por nombre de producto.
+  - Filtros por monto mínimo y máximo.
+  - Opción para ordenar por tasa de interés (de menor a mayor).
+  - Listado de resultados usando tarjetas de crédito definidas en `creditsData.js`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Página “Solicita tu Crédito”**
+  - Formulario controlado con campos:
+    - Nombre completo.
+    - Correo electrónico.
+    - Monto solicitado.
+    - Plazo en meses.
+    - Tipo de crédito.
+  - Validaciones básicas de campos obligatorios y formatos.
+  - Cálculo de una cuota mensual estimada.
+  - Resumen previo de la solicitud antes de confirmar.
+  - Historial de solicitudes almacenadas en memoria durante la sesión.
 
-## Expanding the ESLint configuration
+## Tecnologías usadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React con Vite.
+- JavaScript.
+- HTML5 y CSS3 (estilos personalizados).
+- React Router para la navegación entre páginas.
+
+
