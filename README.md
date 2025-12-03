@@ -1,37 +1,46 @@
-# CrediSmart – Simulador y solicitud de crédito
+# CrediSmart – Simulador y Solicitud de Créditos
 
-Aplicación web desarrollada con React que permite a los usuarios conocer diferentes opciones de crédito, simularlos según filtros básicos y enviar una solicitud con sus datos.
+**Carolina Alvarez**  
+*Estudiante de Tecnología de Desarrollo de Software*  
+*IU Digital de Antioquia*
+
+## Descripción del proyecto
+
+Aplicación web desarrollada con React para simular y solicitar créditos financieros. Permite a los usuarios explorar diferentes productos de crédito, filtrarlos por criterios específicos y completar un formulario de solicitud con validación y resumen previo.
 
 ## Características principales
 
-- **Página de inicio**
-  - Encabezado con logo y navegación.
-  - Sección hero con mensaje principal.
-  - Catálogo de productos de crédito con tarjetas (imagen, título, descripción y botón).
-
-- **Página “Simula tu Crédito”**
-  - Búsqueda por nombre de producto.
-  - Filtros por monto mínimo y máximo.
-  - Opción para ordenar por tasa de interés (de menor a mayor).
-  - Listado de resultados usando tarjetas de crédito definidas en `creditsData.js`.
-
-- **Página “Solicita tu Crédito”**
-  - Formulario controlado con campos:
-    - Nombre completo.
-    - Correo electrónico.
-    - Monto solicitado.
-    - Plazo en meses.
-    - Tipo de crédito.
-  - Validaciones básicas de campos obligatorios y formatos.
-  - Cálculo de una cuota mensual estimada.
-  - Resumen previo de la solicitud antes de confirmar.
-  - Historial de solicitudes almacenadas en memoria durante la sesión.
-
-## Tecnologías usadas
-
-- React con Vite.
-- JavaScript.
-- HTML5 y CSS3 (estilos personalizados).
-- React Router para la navegación entre páginas.
+### Página de Inicio
+- Hero section con mensaje principal y video de fondo
 
 
+
+
+- Catálogo de productos de crédito en tarjetas responsive
+- Navegación fija con menú responsive
+
+### Simulador de Créditos
+- Filtro por nombre del producto
+- Rango de montos (mínimo y máximo)
+- Ordenamiento por tasa de interés
+- Resultados en tarjetas con imagen, título, tasa y descripción
+
+### Solicitud de Crédito
+- Formulario controlado con 5 campos principales
+- Validaciones en tiempo real (campos obligatorios, email válido)
+- Cálculo automático de cuota mensual estimada
+- Resumen previo antes de confirmar
+- Historial de solicitudes (persistencia en memoria)
+
+## Tecnologías utilizadas
+
+- **React 18** con Vite (bundler)
+- **React Router DOM** (navegación SPA)
+- **JavaScript ES6+** (manejo de estado con `useState`)
+- **CSS3** personalizado (Flexbox, Grid, animaciones)
+- **Google Fonts** (DM Sans, Poppins)
+- **Git & GitHub** (control de versiones)
+
+## Instalación y ejecución
+
+1. **Clonar el repositorio**
