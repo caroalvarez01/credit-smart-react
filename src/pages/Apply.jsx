@@ -165,7 +165,7 @@ export default function Apply() {
           </button>
         </form>
 
-        {mensaje && <p>{mensaje}</p>}
+        {mensaje && <p className="apply-mensaje">{mensaje}</p>}
 
         {/* RESUMEN */}
         {resumen && (
