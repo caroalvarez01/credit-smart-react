@@ -161,21 +161,6 @@ Reglas iniciales:
 allow read, write: if true;
 ```
 
----
-
-## 🎥 Video Demostrativo (Obligatorio)
-
-El video debe mostrar:
-
-1. Ejecución del proyecto local  
-2. Crear una solicitud  
-3. Ver la solicitud registrada en Firebase  
-4. Consultar solicitudes desde `/solicitudes`  
-5. Eliminar una solicitud  
-6. Prueba sin internet (manejo de error)  
-7. Explicación breve de la integración React + Firebase + Firestore  
-
-Duración recomendada: **3–4 minutos**
 
 ---
 
