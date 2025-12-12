@@ -1,46 +1,206 @@
-# CrediSmart – Simulador y Solicitud de Créditos
+# 💳 CreditSmart – Integración con Backend Firebase (Firestore CRUD)
+
+Proyecto desarrollado para la actividad **S40 - EA3: Integración con Backend Firebase**, del curso **Ingeniería Web 1**.  
+El objetivo es integrar persistencia real en la nube mediante Firebase, permitiendo almacenar, consultar y gestionar solicitudes crediticias desde una base de datos NoSQL (Firestore).
+
+---
+
+## 🚀 Objetivo del Proyecto
+
+Implementar en CreditSmart:
+
+- Persistencia de datos en Firestore  
+- CRUD (Create, Read, Delete)  
+- Comunicación asíncrona  
+- Lectura en tiempo real con `onSnapshot`  
+- Manejo de errores (offline)  
+- Loading states  
+- Variables de entorno con `.env`  
+- Integración completa React + Firebase  
+
+Este proyecto representa la evolución de CreditSmart de guardar datos solo en memoria a convertirse en un sistema moderno con backend real.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+- React + Vite  
+- React Router  
+- Firebase (Firestore)  
+- JavaScript (ESModules)  
+- Git / GitHub  
+- Variables de entorno (.env)  
+
+---
+
+## 📁 Estructura del Proyecto
+
+```md
+src/
+├── components/
+│   ├── SolicitudForm.jsx
+│   ├── SolicitudesList.jsx
+│   └── Navbar / Footer / otros
+├── services/
+│   └── solicitudesService.js   ← CRUD con Firestore
+├── firebase.js                 ← Configuración Firebase
+├── App.jsx                     ← Rutas integradas
+.env.example                    ← Variables necesarias
+.gitignore                      ← Ignora .env
+```
+
+---
+
+## 🔥 Funcionalidades Implementadas
+
+### ✔ 1. Crear solicitud (CREATE)
+
+Desde `/crear`, se envía información a Firestore:
+
+```js
+await addDoc(collection(db, "solicitudes"), data);
+```
+
+Incluye:
+
+- Loading  
+- Mensaje de éxito  
+- Manejo de error si no hay internet  
+
+---
+
+### ✔ 2. Consultar solicitudes (READ – tiempo real)
+
+Ruta: `/solicitudes`
+
+Uso de `onSnapshot()`:
+
+```js
+onSnapshot(collection(db, "solicitudes"), callback);
+```
+
+Lista actualizada sin recargar.
+
+---
+
+### ✔ 3. Eliminar solicitud (DELETE)
+
+```js
+await deleteDoc(doc(db, "solicitudes", id));
+```
+
+Se borra en Firebase y en la interfaz al instante.
+
+---
+
+### ✔ 4. Loading States
+
+- “Guardando…”  
+- “Cargando solicitudes…”  
+
+---
+
+### ✔ 5. Manejo de errores (offline)
+
+Si el usuario está sin internet:
+
+- Muestra mensaje de error  
+- No congela la app  
+
+---
+
+### ✔ 6. Seguridad con Variables de Entorno
+
+`.env.example` incluido:
+
+```md
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+```
+
+`.env` está protegido por `.gitignore`.
+
+---
+
+## 🔧 Instalación y Ejecución
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/caroalvarez01/credit-smart-react.git
+```
+
+### 2. Instalar dependencias
+```bash
+npm install
+```
+
+### 3. Crear archivo `.env` siguiendo `.env.example`
+
+### 4. Ejecutar el servidor de desarrollo
+```bash
+npm run dev
+```
+
+---
+
+## 🗄️ Configuración Firebase
+
+- Proyecto creado en Firebase Console  
+- App Web configurada  
+- Firestore habilitado en modo **test mode**  
+- Colección: `solicitudes`  
+
+Reglas iniciales:
+
+```js
+// Test mode rules (válidas por 30 días)
+allow read, write: if true;
+```
+
+---
+
+## 🎥 Video Demostrativo (Obligatorio)
+
+El video debe mostrar:
+
+1. Ejecución del proyecto local  
+2. Crear una solicitud  
+3. Ver la solicitud registrada en Firebase  
+4. Consultar solicitudes desde `/solicitudes`  
+5. Eliminar una solicitud  
+6. Prueba sin internet (manejo de error)  
+7. Explicación breve de la integración React + Firebase + Firestore  
+
+Duración recomendada: **3–4 minutos**
+
+---
+
+## 📝 Estado Final del Proyecto
+
+El proyecto cumple con todos los requisitos:
+
+✔ CRUD completo (create, read, delete)  
+✔ Persistencia real en Firebase  
+✔ Lectura en tiempo real  
+✔ Manejo de errores  
+✔ Loading states  
+✔ React Router funcionando correctamente  
+✔ Repositorio actualizado  
+✔ `.env.example` incluido y `.env` protegido  
+✔ Firebase Console con datos verificados  
+
+---
+
+## ✨ Desarrollado por
 
 **Carolina Alvarez**  
 *Estudiante de Tecnología de Desarrollo de Software*  
 *IU Digital de Antioquia*
 
-## Descripción del proyecto
+---
 
-Aplicación web desarrollada con React para simular y solicitar créditos financieros. Permite a los usuarios explorar diferentes productos de crédito, filtrarlos por criterios específicos y completar un formulario de solicitud con validación y resumen previo.
-
-## Características principales
-
-### Página de Inicio
-- Hero section con mensaje principal y video de fondo
-
-
-
-
-- Catálogo de productos de crédito en tarjetas responsive
-- Navegación fija con menú responsive
-
-### Simulador de Créditos
-- Filtro por nombre del producto
-- Rango de montos (mínimo y máximo)
-- Ordenamiento por tasa de interés
-- Resultados en tarjetas con imagen, título, tasa y descripción
-
-### Solicitud de Crédito
-- Formulario controlado con 5 campos principales
-- Validaciones en tiempo real (campos obligatorios, email válido)
-- Cálculo automático de cuota mensual estimada
-- Resumen previo antes de confirmar
-- Historial de solicitudes (persistencia en memoria)
-
-## Tecnologías utilizadas
-
-- **React 18** con Vite (bundler)
-- **React Router DOM** (navegación SPA)
-- **JavaScript ES6+** (manejo de estado con `useState`)
-- **CSS3** personalizado (Flexbox, Grid, animaciones)
-- **Google Fonts** (DM Sans, Poppins)
-- **Git & GitHub** (control de versiones)
-
-## Instalación y ejecución
-
-1. **Clonar el repositorio**
+¡Gracias por revisar este proyecto! 😊
