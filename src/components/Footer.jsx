@@ -6,7 +6,7 @@ export default function Footer() {
       </div>
       <div className="footer-right">
         
-        <span>..</span>
+        <span></span>
       </div>
     </footer>
   );

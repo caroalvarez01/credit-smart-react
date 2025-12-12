@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables (MUST NOT GO TO GIT)
+.env
+.env.local
+.env.*.local
